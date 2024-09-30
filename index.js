@@ -39,7 +39,7 @@ const sayHello = () => {
 sayHello();
 myFunction();
 
-//                  parameters - local only to the
+//                  parameters - local only to the function
 function sendAlert(firstName, lastName){
     console.log(`Greetings, ${firstName} ${lastName}`);
 }
@@ -63,3 +63,58 @@ let student = {
 }
 
 getMyAge(student);
+
+console.log("=====================================");
+
+// Return statement - allows us to access values produced inside a function
+
+let a = 10;
+let b = 20;
+
+function add(a, b){
+    let sumInsideFunction = a + b;
+    return sumInsideFunction;
+}
+
+let sum = add(a, b);
+console.log(sum); // 30
+// console.log(sumInsideFunction); // error
+
+function subtract(a, b){
+    console.log(a - b);
+}
+
+subtract(a, b); // -10
+
+function multiply(a, b){
+    let product = a*b;
+}
+
+console.log(multiply(a, b)); // undefined
+
+function multiplyReturn(a, b){
+    let product = a*b;
+    return product;
+}
+
+console.log(multiplyReturn(a,b)); // 200
+
+function createStudent(){
+    let student = {
+        name: "Jean",
+        age: 18,
+        class: "4th year",
+        address: "Manila, Philippines"
+    }
+    return student;
+}
+
+let newStudent = createStudent();
+
+console.log(newStudent.address);
+
+function divide(a, b){
+    return a/b;
+}
+
+console.log(divide(b, a)); // 2
